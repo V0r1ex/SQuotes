@@ -1,0 +1,29 @@
+<header class="header">
+    <div class="icon-container">
+        <img src="../resources/images/logo.png" alt="icon">
+        <h1 class="site-name">SNotes</h1>
+    </div>
+    <ol class="ol-nav">
+        <li><a class="nav-item" href="/">Main</a></li>
+        <li><a class="nav-item" href="/about">About</a></li>
+        <li><a class="nav-item" href="/pages">Notes</a></li>
+        <li><a class="nav-item" href="/contact">Contact</a></li>
+    </ol>
+    <div class="header-form-outer">
+        <div class="autorization">
+            <div class="buttons">
+                <form onsubmit="return false;">
+                    <div class="inputs">
+                        <input type="text" placeholder="Имя пользователя" style="width: 200px; height: 28px;" class="baseForm baseInput" required>
+                        <input type="password" placeholder="Пароль" style="width: 200px; height: 28px;" class="baseForm baseInput" required>
+                    </div>
+                    <button id="logIn" class="baseForm baseButton" onclick="autorization(this.parentElement)">Войти</button>
+                </form>  
+            </div>
+            <div class="links">
+                <a onclick="getWindowAt(registrationWindow)">Нет аккаунта?</a> 
+            </div>
+        </div>
+        <button id="changeTheme" class="baseForm baseButton" onclick="changeTheme(this)"><i class="fa fa-moon-o" aria-hidden="true"></i></button>
+    </div>
+</header>

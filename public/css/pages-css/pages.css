@@ -1,0 +1,183 @@
+.baseForm {
+  background-color: var(--baseButtonBackgroundColor, rgb(197, 239, 255));
+  background: var(--baseButtonBackground, linear-gradient(180deg, rgb(197, 239, 255) 0%, rgba(104, 227, 255, 0.6) 4%, rgba(182, 154, 246, 0.9) 100%));
+  background-size: 100% 115%;
+  background-position: 2px -2px;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  color: var(--basicColorT, #f0f7fa);
+}
+
+.baseButton {
+  border-radius: 15px;
+}
+.baseButton:active {
+  border: 2px solid var(--basicColorT, #f0f7fa);
+}
+
+.modals-container {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  z-index: 20;
+  color: var(--basicColorT, #f0f7fa);
+}
+.modals-container .base-modal {
+  cursor: pointer;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+  opacity: 0;
+}
+.modals-container .base-modal.error {
+  background-color: rgba(255, 124, 124, 0.5);
+}
+.modals-container .base-modal.warning {
+  background-color: rgba(124, 235, 255, 0.5);
+}
+.modals-container .base-modal.ok {
+  background-color: rgba(139, 255, 124, 0.5);
+}
+
+.toolsButton {
+  margin: 0 100px;
+  width: 50px;
+  height: 50px;
+  background: var(--toolsButtonColor, rgba(193, 221, 253, 0.8));
+  border-radius: 5px;
+  color: var(--basicColorT, #f0f7fa);
+  transition: opacity 0.5s;
+  flex-shrink: 0;
+}
+.toolsButton:hover {
+  opacity: 0.5;
+}
+
+.cardButton {
+  width: 25px;
+  height: 25px;
+  background-color: rgba(203, 220, 248, 0.9);
+  border-radius: 7px;
+  border: 1px solid #798caa;
+  font-size: 15px;
+  color: #798caa;
+}
+
+.baseInput {
+  padding-left: 10px;
+  margin-right: 20px;
+}
+.baseInput:focus {
+  border: 2px solid var(--basicColorT, #f0f7fa);
+}
+.baseInput::placeholder {
+  color: var(--basicColorT, #f0f7fa);
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+@keyframes disappearance {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+main .tools {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+main .tools .toolsButton {
+  margin: 0;
+}
+main .pagesContainer {
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+main .pagesContainer .page {
+  width: 300px;
+  min-height: 100px;
+  background: var(--pageBackground, rgba(193, 221, 253, 0.5));
+  position: relative;
+  margin: 20px;
+  border-radius: 5px;
+}
+main .pagesContainer .page img {
+  width: 100%;
+  margin-bottom: 36px;
+}
+main .pagesContainer .page a {
+  display: block;
+}
+main .pagesContainer .page .footer-card * {
+  position: absolute;
+  bottom: 0;
+}
+main .pagesContainer .page .footer-card h3 {
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 25px;
+  height: 40px;
+  width: 75%;
+  padding: 0 10px;
+  overflow-y: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  line-height: 40px;
+  display: inline-block;
+}
+main .pagesContainer .page .footer-card #removePage {
+  right: 0;
+  border-radius: 5px 0;
+}
+main .pagesContainer .page .footer-card #editNamePage {
+  left: 0;
+  border-radius: 0 5px;
+}
+main .pagesContainer .page .footer-card button {
+  height: 40px;
+  width: 40px;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 853px) {
+  main {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  .pagesContainer {
+    margin: 20px !important;
+  }
+  .page {
+    width: 100% !important;
+  }
+}
+
+/*# sourceMappingURL=pages.css.map */

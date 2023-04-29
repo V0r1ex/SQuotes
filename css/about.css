@@ -1,0 +1,112 @@
+.baseForm {
+  background-color: var(--baseButtonBackgroundColor, rgb(197, 239, 255));
+  background: var(--baseButtonBackground, linear-gradient(180deg, rgb(197, 239, 255) 0%, rgba(104, 227, 255, 0.6) 4%, rgba(182, 154, 246, 0.9) 100%));
+  background-size: 100% 115%;
+  background-position: 2px -2px;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  color: var(--basicColorT, #f0f7fa);
+}
+
+.baseButton {
+  border-radius: 15px;
+}
+.baseButton:active {
+  border: 2px solid var(--basicColorT, #f0f7fa);
+}
+
+.modals-container {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  z-index: 20;
+  color: var(--basicColorT, #f0f7fa);
+}
+.modals-container .base-modal {
+  cursor: pointer;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+  opacity: 0;
+}
+.modals-container .base-modal.error {
+  background-color: rgba(255, 124, 124, 0.5);
+}
+.modals-container .base-modal.warning {
+  background-color: rgba(124, 235, 255, 0.5);
+}
+.modals-container .base-modal.ok {
+  background-color: rgba(139, 255, 124, 0.5);
+}
+
+.toolsButton {
+  margin: 0 100px;
+  width: 50px;
+  height: 50px;
+  background: var(--toolsButtonColor, rgba(193, 221, 253, 0.8));
+  border-radius: 5px;
+  color: var(--basicColorT, #f0f7fa);
+  transition: opacity 0.5s;
+  flex-shrink: 0;
+}
+.toolsButton:hover {
+  opacity: 0.5;
+}
+
+.cardButton {
+  width: 25px;
+  height: 25px;
+  background-color: rgba(203, 220, 248, 0.9);
+  border-radius: 7px;
+  border: 1px solid #798caa;
+  font-size: 15px;
+  color: #798caa;
+}
+
+.baseInput {
+  padding-left: 10px;
+  margin-right: 20px;
+}
+.baseInput:focus {
+  border: 2px solid var(--basicColorT, #f0f7fa);
+}
+.baseInput::-moz-placeholder {
+  color: var(--basicColorT, #f0f7fa);
+}
+.baseInput::placeholder {
+  color: var(--basicColorT, #f0f7fa);
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+@keyframes disappearance {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+main article {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+}/*# sourceMappingURL=about.css.map */

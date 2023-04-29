@@ -1,0 +1,663 @@
+@charset "UTF-8";
+.baseForm {
+  background-color: var(--baseButtonBackgroundColor, rgb(197, 239, 255));
+  background: var(--baseButtonBackground, linear-gradient(180deg, rgb(197, 239, 255) 0%, rgba(104, 227, 255, 0.6) 4%, rgba(182, 154, 246, 0.9) 100%));
+  background-size: 100% 115%;
+  background-position: 2px -2px;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  color: var(--basicColorT, #f0f7fa);
+}
+
+.baseButton {
+  border-radius: 15px;
+}
+.baseButton:active {
+  border: 2px solid var(--basicColorT, #f0f7fa);
+}
+
+.modals-container {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  z-index: 20;
+  color: var(--basicColorT, #f0f7fa);
+}
+.modals-container .base-modal {
+  cursor: pointer;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+  opacity: 0;
+}
+.modals-container .base-modal.error {
+  background-color: rgba(255, 124, 124, 0.5);
+}
+.modals-container .base-modal.warning {
+  background-color: rgba(124, 235, 255, 0.5);
+}
+.modals-container .base-modal.ok {
+  background-color: rgba(139, 255, 124, 0.5);
+}
+
+.toolsButton {
+  margin: 0 100px;
+  width: 50px;
+  height: 50px;
+  background: var(--toolsButtonColor, rgba(193, 221, 253, 0.8));
+  border-radius: 5px;
+  color: var(--basicColorT, #f0f7fa);
+  transition: opacity 0.5s;
+  flex-shrink: 0;
+}
+.toolsButton:hover {
+  opacity: 0.5;
+}
+
+.cardButton {
+  width: 25px;
+  height: 25px;
+  background-color: rgba(203, 220, 248, 0.9);
+  border-radius: 7px;
+  border: 1px solid #798caa;
+  font-size: 15px;
+  color: #798caa;
+}
+
+.baseInput {
+  padding-left: 10px;
+  margin-right: 20px;
+}
+.baseInput:focus {
+  border: 2px solid var(--basicColorT, #f0f7fa);
+}
+.baseInput::placeholder {
+  color: var(--basicColorT, #f0f7fa);
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+@keyframes disappearance {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+main {
+  font-size: 20px;
+}
+main input[type=range] {
+  appearance: none !important;
+  background: var(--toolsButtonColor, rgba(193, 221, 253, 0.8));
+  height: 8px;
+  border-radius: 10px;
+}
+main input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background: var(--basicColorT, #f0f7fa);
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+}
+main .tutorial-btn {
+  position: fixed;
+  border-radius: 50%;
+  right: 75px;
+  height: 70px;
+  width: 70px;
+  bottom: 120px;
+  font-size: 40px;
+  margin: 0;
+  animation: sizingBtn 1s ease-in-out alternate-reverse infinite;
+}
+@keyframes sizingBtn {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 1.1;
+  }
+}
+main .tools {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+main .tools button {
+  margin: 0;
+}
+main .tools .selectFilters {
+  z-index: 15;
+  position: relative;
+}
+main .tools .selectFilters.isActive .filters {
+  display: block;
+}
+main .tools .selectFilters #filterButton {
+  width: 100px;
+}
+main .tools .selectFilters .filters {
+  margin-top: 5px;
+  display: none;
+  font-size: 16px;
+  width: 100%;
+  top: 100%;
+  right: 0;
+  position: absolute;
+  background-color: rgba(183, 208, 238, 0.9);
+  cursor: pointer;
+  border-radius: 5px;
+}
+main .tools .selectFilters .filters .filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 25px;
+  border-radius: 5px;
+  margin-bottom: 3px;
+}
+main .tools .selectFilters .filters .filter.isActive {
+  background-color: rgba(214, 233, 255, 0.8);
+}
+main .tools .selectFilters .filters .filter:last-child {
+  margin-bottom: 0;
+}
+main .tools .selectFilters .filters .filter:hover {
+  background-color: rgba(214, 233, 255, 0.8);
+}
+main .tools .search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+main .tools .search-container button {
+  border-radius: 5px 0 0 5px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+main .tools .search-container .searchCard {
+  height: 50px;
+  width: 90%;
+  background: var(--toolsButtonColor, rgba(193, 221, 253, 0.8));
+  border-radius: 0 5px 5px 0;
+  color: var(--basicColorT, #f0f7fa);
+  font-size: 20px;
+  padding: 5px;
+  border: 1px solid transparent;
+}
+main .tools .search-container .searchCard::-webkit-search-cancel-button {
+  appearance: none;
+  height: 20px;
+  width: 25px;
+  background-image: url("../../resources/images/clear.png");
+  background-size: 30px 20px;
+  cursor: pointer;
+}
+main .tools .search-container .searchCard::placeholder {
+  color: var(--basicColorT, #f0f7fa);
+}
+main .tools .backgroundImageInput {
+  position: relative;
+}
+main .tools .backgroundImageInput input {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  width: 50px;
+}
+main .cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+main .cards .backgroundContainer {
+  display: none;
+}
+main .cards .card {
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+  transition: rotate 0.5s;
+  width: 300px;
+  height: 350px;
+  background: rgb(91, 93, 122);
+  background-size: 100% 100%;
+  box-shadow: 3px 3px 2px rgba(91, 93, 122, 0.4);
+  border-radius: 20px;
+  text-align: left;
+  resize: both;
+  min-height: 300px;
+  min-width: 230px;
+  overflow: hidden;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+main .cards .card::-webkit-resizer {
+  background-color: var(--basicColorT, #f0f7fa);
+  width: 100px;
+  height: 100px;
+  border-radius: 3px 0 1em 0;
+}
+main .cards .card h3::-webkit-scrollbar, main .cards .card .mainCard::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+main .cards .card .headerCard {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+main .cards .card .headerCard h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  width: 65%;
+  max-height: 55px;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+}
+main .cards .card .headerCard .buttons {
+  max-width: 100px;
+  display: flex;
+  align-content: start;
+  flex-wrap: wrap;
+}
+main .cards .card .headerCard .buttons input[type=range].rangeBackground {
+  height: 5px;
+  width: 90px;
+  margin-top: 5px;
+}
+main .cards .card .headerCard .buttons input[type=range].rangeBackground::-webkit-slider-thumb {
+  height: 10px;
+  width: 10px;
+  background: var(--basicColorT, #f0f7fa);
+}
+main .cards .card .headerCard .buttons button {
+  margin: 4px 2px;
+}
+main .cards .card .headerCard .buttons #color {
+  cursor: pointer;
+  width: 29px;
+  height: 33px;
+  border: none;
+  background-color: transparent;
+}
+main .cards .card .headerCard .buttons #color::-webkit-color-swatch {
+  border: 2px solid var(--basicColorT, #f0f7fa);
+  border-radius: 7px;
+}
+main .cards .card .headerCard .buttons .changeColorForCanvas {
+  width: 25px;
+  height: 25px;
+  margin: 4px 2px 0 2px;
+  border: 2px solid var(--basicColorT, #f0f7fa);
+  border-radius: 7px;
+}
+main .cards .card .mainCard {
+  flex-grow: 1;
+  max-height: 80%;
+  overflow: auto;
+}
+main .cards .card .mainCard .componentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+main .cards .card .mainCard .componentContainer .component.focus .content {
+  min-height: 200px !important;
+}
+main .cards .card .mainCard .componentContainer .component.focus .additional-btns {
+  display: flex !important;
+}
+main .cards .card .mainCard .componentContainer .component {
+  overflow: auto;
+  resize: horizontal;
+  position: relative;
+  width: 100%;
+  margin: 5px;
+  min-width: 40px;
+}
+main .cards .card .mainCard .componentContainer .component * {
+  width: 100%;
+}
+main .cards .card .mainCard .componentContainer .component .content {
+  padding: 3px;
+  padding-right: 30px;
+  min-height: 80px;
+}
+main .cards .card .mainCard .componentContainer .component .content ol {
+  margin-left: 20px;
+  list-style-type: decimal !important;
+}
+main .cards .card .mainCard .componentContainer .component .content ul {
+  margin-left: 20px;
+  list-style-type: disc !important;
+}
+main .cards .card .mainCard .componentContainer .component .content div {
+  margin: 0;
+}
+main .cards .card .mainCard .componentContainer .component .content div .strike {
+  text-decoration: line-through;
+}
+main .cards .card .mainCard .componentContainer .component .content div input[type=checkbox] {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  appearance: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 2px solid #fff;
+}
+main .cards .card .mainCard .componentContainer .component .content div input[type=checkbox]::after {
+  content: "";
+  position: absolute;
+}
+main .cards .card .mainCard .componentContainer .component .content div input[type=checkbox]:checked {
+  background-color: rgba(193, 221, 253, 0.8);
+}
+main .cards .card .mainCard .componentContainer .component .content div input[type=checkbox]:checked::after {
+  color: white;
+  content: "✔";
+  font-size: 10px;
+}
+main .cards .card .mainCard .componentContainer .component video {
+  background: linear-gradient(90deg, var(--basicColorT, #f0f7fa) 50%, transparent 0) repeat-x, linear-gradient(90deg, var(--basicColorT, #f0f7fa) 50%, transparent 0) repeat-x, linear-gradient(0deg, var(--basicColorT, #f0f7fa) 50%, transparent 0) repeat-y, linear-gradient(0deg, var(--basicColorT, #f0f7fa) 50%, transparent 0) repeat-y;
+  background-size: 10px 2px, 10px 2px, 2px 10px, 2px 10px;
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+  padding: 2px;
+}
+main .cards .card .mainCard .componentContainer .component .audio-name {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 14px;
+  z-index: 2;
+  width: 85%;
+  height: 50%;
+  overflow: auto;
+}
+main .cards .card .mainCard .componentContainer .component audio::-webkit-media-controls-panel, main .cards .card .mainCard .componentContainer .component audio {
+  background-color: var(--audio-bgc, var(--basicColorT, #f0f7fa));
+  border-radius: 3px;
+  position: relative;
+  width: 94%;
+  height: 72px;
+  z-index: 1;
+}
+main .cards .card .mainCard .componentContainer .component img, main .cards .card .mainCard .componentContainer .component div.content {
+  border: 2px dashed var(--basicColorT, #f0f7fa);
+}
+main .cards .card .mainCard .componentContainer .component img {
+  pointer-events: none;
+}
+main .cards .card .mainCard .componentContainer .component .componentButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 18px;
+  overflow: hidden;
+}
+main .cards .card .mainCard .componentContainer .component .componentButtons .additional-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  flex-direction: column;
+}
+main .cards .card .mainCard .componentContainer .component .componentButtons .color {
+  cursor: pointer;
+  height: 25px;
+  background-color: transparent;
+  width: 22px;
+  border: 0;
+  margin-top: -4px;
+  margin-right: 1px;
+}
+main .cards .card .mainCard .componentContainer .component .componentButtons .color::-webkit-color-swatch {
+  border: 2px solid var(--basicColorT, #f0f7fa);
+  border-radius: 0;
+}
+main .cards .card .mainCard .componentContainer .component .componentButtons button {
+  height: 18px;
+  font-size: 12px;
+  color: var(--basicColorT, #f0f7fa);
+  background: none;
+  border: 2px solid var(--basicColorT, #f0f7fa);
+}
+main .cards .card .mainCard .buttonsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin: 5px;
+}
+main .cards .card .mainCard .buttonsContainer button {
+  flex-shrink: 1;
+  margin: 0;
+  border-radius: 0;
+  height: 30px;
+  width: 100%;
+}
+main .cards .card .mainCard .buttonsContainer button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+main .cards .card .mainCard .buttonsContainer button:last-child {
+  border-radius: 0 4px 4px 0;
+}
+main .cards .card .mainCard .buttonsContainer button * {
+  margin: 0 2px;
+}
+main .cards .card .footerCard {
+  width: 100%;
+  font-size: 17px;
+  padding: 5px;
+  height: 50px;
+}
+main .cards .card .panel {
+  top: 0;
+  right: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  background: inherit;
+  z-index: 10;
+  visibility: hidden;
+}
+main .cards .card .panel .searchCard {
+  width: 90%;
+  padding: 5px;
+}
+main .cards .card .panel .tags {
+  max-height: 75%;
+  overflow: auto;
+}
+main .cards .card .panel .tags .tagContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+  height: 35px;
+  border: var(--basicColorT, #f0f7fa) 2px solid;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+main .cards .card .panel .tags .tagContainer .tag {
+  width: 80%;
+}
+main .cards .card .panel .tags .tagButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .cards .card .panel .tags .tagButtons * {
+  margin: 0 5px;
+}
+main .cards .card .panel .tags .tagButtons button {
+  position: static;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .cards .card .panel .tags .tagButtons input[type=checkbox] {
+  transition: 0s;
+  border: 1px solid #798caa;
+  font-size: 15px;
+  background-color: rgba(203, 220, 248, 0.9);
+  border-radius: 7px;
+  width: 20px;
+  height: 20px;
+}
+main .cards .card .panel .tags .tagButtons input[type=checkbox]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #798caa;
+}
+main .cards .card .panel .tags .tagButtons input[type=checkbox]:checked {
+  background-color: rgba(213, 226, 247, 0.9);
+}
+main .cards .card .panel .tags .tagButtons input[type=checkbox]:checked::after {
+  content: "✔";
+}
+main .cards .card .panel .tags .selectedTag {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+main .cards .card .panel #addTag {
+  width: 100%;
+  margin-top: 10px;
+}
+main .cards .card .panel .closePanel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.modalTutorial {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  width: 800px;
+  border-radius: 20px;
+  background: var(--registrationBackground, linear-gradient(180deg, rgb(25, 155, 231) 0%, rgba(34, 0, 255, 0.4) 70%));
+  color: var(--basicColorT, #f0f7fa);
+}
+.modalTutorial .closeModal {
+  top: 0;
+  right: 0;
+  position: absolute;
+  border-radius: 5px 20px 5px 5px;
+  height: 30px;
+  width: 30px;
+  font-size: 14px;
+}
+.modalTutorial .tutorial__title {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.modalTutorial .tutorial__container .tutorial__image {
+  height: fit-content;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.modalTutorial .tutorial__container > .tutorial__image {
+  width: 100%;
+}
+.modalTutorial .tutorial__container .tutorial__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.modalTutorial .tutorial__container .tutorial__row .tutorial__image {
+  width: 40%;
+}
+
+@keyframes linearGradientMove {
+  100% {
+    background-position: 10px 0, -10px 100%, 0 -10px, 100% 10px;
+  }
+}
+@keyframes sizing {
+  0% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1.1;
+  }
+}
+@media (max-width: 1318px) {
+  .search-container {
+    width: 100% !important;
+  }
+}
+@media (max-width: 961px) {
+  .modalTutorial, .registration {
+    width: 600px !important;
+  }
+}
+@media (max-width: 670px) {
+  .modalTutorial, .registration {
+    width: 80% !important;
+  }
+  .registration {
+    padding: 20px;
+  }
+  .registration form {
+    width: 100% !important;
+  }
+  .registration form input {
+    margin-bottom: 20px !important;
+  }
+  h3 {
+    font-size: 30px !important;
+  }
+  .baseForm {
+    font-size: 16px !important;
+  }
+}
+
+/*# sourceMappingURL=page.css.map */

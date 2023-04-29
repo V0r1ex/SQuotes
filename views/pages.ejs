@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./components/head.ejs') %>
+<body> 
+    <div class="loading">
+        <div id="spinner"></div>
+    </div>
+    <div class="box">
+        <%- include('./components/header.ejs') %>
+        <main>
+            <div class="tools">
+                <button id="addNote" class="toolsButton"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                <button id="removeNote" class="toolsButton"><i class="fa fa-minus" aria-hidden="true"></i></button>
+            </div>
+            <div class="pagesContainer"></div>
+            <button class="toolsButton" id="scrollToTop" onclick="scrollWindowToTop()">Начало</button>
+        </main>
+    </div>
+    <div class="modals-container"></div>
+    <%- include('./components/clientScripts.ejs') %>
+    <script src="view/pages.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "squotes",
+  "version": "0.0.1",
+  "description": "simple qoutes for test ",
+  "main": "index.js",
+  "author": "Vanutin Vitaly",
+  "scripts": {
+    "index": "sass ./public/css/index.sass ./public/css/style.css --watch",
+    "about": "sass ./public/css/pages-css/about.sass ./public/css/pages-css/about.css --watch",
+    "main": "sass ./public/css/pages-css/main.sass ./public/css/pages-css/main.css --watch",
+    "contact": "sass ./public/css/pages-css/contact.sass ./public/css/pages-css/contact.css --watch",
+    "pages": "sass ./public/css/pages-css/pages.sass ./public/css/pages-css/pages.css --watch",
+    "page": "sass ./public/css/pages-css/page.sass ./public/css/pages-css/page.css --watch",
+    "privacy": "sass ./public/css/pages-css/privacy.sass ./public/css/pages-css/privacy.css --watch",
+    "start": "nodemon ./scripts/model/server.js",
+    "dev": "concurrently --kill-others \"npm run index\" \"npm run privacy\" \"npm run about\" \"npm run main\" \"npm run contact\" \"npm run pages\" \"npm run about\" \"npm run page\" \"npm run start\""
+  },
+  "keywords": [
+    "quotes"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "ejs": "^3.1.8",
+    "nodemon": "^2.0.20",
+    "sass": "^1.57.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "jsonwebtoken": "^9.0.0",
+    "pg": "^8.8.0",
+    "sequelize": "^6.28.0"
+  }
+}

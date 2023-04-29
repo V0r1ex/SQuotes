@@ -1,0 +1,132 @@
+$basicColorT: var(--basicColorT, #f0f7fa)
+$fontSize: 20px
+$fontSizeH1: 40px
+$fontSizeForm: 15px
+$cardfontSize: 20px
+$fontRaleway: 'Raleway', sans-serif
+$fontRoboto: 'Roboto', sans-serif
+$modalBg: var(--registrationBackground, linear-gradient(180deg, rgb(25,155,231,) 0%, rgba(34,0,255,0.4) 70%))
+
+@mixin centerFlex($gap: false) 
+    display: flex
+    justify-content: center
+    align-items: center
+    @if $gap
+        gap: $gap
+
+.baseForm
+    background-color: var(--baseButtonBackgroundColor,rgb(197,239,255))
+    background: var(--baseButtonBackground, linear-gradient(180deg, rgba(197,239,255,1) 0%, rgba(104,227,255,0.6) 4%, rgba(182,154,246,0.9) 100%))
+    background-size: 100% 115%
+    background-position: 2px -2px
+    border: 2px solid transparent
+    box-sizing: border-box
+    color: $basicColorT
+
+.baseButton 
+    border-radius: 15px
+    &:active
+        border: 2px solid $basicColorT
+
+.modals-container
+    position: fixed
+    bottom: 40px
+    left: 40px
+    @include centerFlex(10px)
+    flex-direction: column
+    z-index: 20
+    color: $basicColorT
+    .base-modal
+        cursor: pointer
+        width: 400px
+        padding: 20px
+        border-radius: 10px
+        @include centerFlex(20px)
+        font-size: 20px
+        opacity: 0
+        &.error
+            background-color: rgba(255, 124, 124, 0.5)
+        &.warning
+            background-color: rgba(124, 235, 255, 0.5)
+        &.ok
+            background-color: rgba(139, 255, 124, 0.5)
+
+.toolsButton
+    margin: 0 100px
+    width: 50px
+    height: 50px
+    background: var(--toolsButtonColor, rgba(193, 221, 253, 0.8))
+    border-radius: 5px
+    color: $basicColorT
+    transition: opacity .5s 
+    flex-shrink: 0
+    &:hover
+        opacity: 0.5
+
+.cardButton
+    width: 25px
+    height: 25px
+    background-color: rgba(203, 220, 248, 0.9)
+    border-radius: 7px
+    border: 1px solid #798caa
+    font-size: 15px
+    color: #798caa
+        
+.baseInput
+    padding-left: 10px
+    margin-right: 20px
+    &:focus
+        border: 2px solid $basicColorT
+    &::placeholder
+        color: $basicColorT
+
+@mixin headerFooter() 
+    background: var(--headerFooterBackground, rgba(193, 221, 253, 0.5))
+    width: 100%
+    height: 120px
+    z-index: 10
+
+@mixin textGradient()
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent  
+
+@mixin centerScreen()
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    
+@mixin removeButton()
+    top: 0
+    right: 0
+    position: absolute
+
+@mixin underlineAnim()
+    position: relative
+    cursor: pointer 
+    &::before
+        position: absolute
+        left: 50%
+        height: 3px
+        width: 0
+        transition: 0.5s
+        background-color: $basicColorT
+        top: 100%
+        content: ''
+    &:hover:before
+        left: 0
+        width: 100%
+
+@keyframes appearance
+    0% 
+        opacity: 0     
+    100% 
+        opacity: 1
+        pointer-events: all
+
+@keyframes disappearance
+    0% 
+        opacity: 1   
+    100% 
+        opacity: 0
+        pointer-events: none        
+  

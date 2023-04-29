@@ -1,0 +1,48 @@
+@import '../constants.sass'
+
+main
+    .contact-body
+        @include centerFlex(50px)
+        flex-direction: column
+        > div
+            flex-shrink: 0 
+        .text-contacts
+            @include centerFlex(80px)
+            flex-wrap: wrap
+            .text-contacts-item
+                h3
+                    margin-bottom: 10px
+                    border-bottom: 2px solid $basicColorT
+        .icons-container
+            width: 30%
+            ol
+                @include centerFlex(20px)
+                justify-content: space-between
+                flex-wrap: wrap
+                li
+                    text-align: center
+                    width: 120px
+                    a
+                        i.fa-vk              
+                            background: rgb(84,255,228)
+                            background: linear-gradient(25deg, rgba(84,255,228,1) 0%, #8ebefd 100%)
+                        i.fa-telegram
+                            background: rgb(174,84,255)
+                            background: linear-gradient(25deg, #d6b6ff 0%, #8ae0ff 100%)
+                        i.fa-youtube-play  
+                            background: rgb(255,0,96)
+                            background: linear-gradient(25deg, #ff00bf 0%, #ff4444 90%)
+                        i.fa
+                            margin-bottom: 30px
+                            font-size: 80px
+                            transition: 0.5s
+                            @include textGradient()            
+                        i:hover
+                            transform: scale(1.5)
+                            rotate: 360deg
+
+@media (max-width: 1065px)
+    .icons-container ol
+        justify-content: center !important
+
+                            

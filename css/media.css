@@ -1,0 +1,23 @@
+@media (max-width: 1120px) {
+  .ol-nav {
+    margin: 0 !important;
+  }
+  .header-form-outer {
+    position: static !important;
+  }
+  .icon-container {
+    display: none !important;
+  }
+}
+@media (max-width: 750px) {
+  .header {
+    flex-direction: column;
+    height: 180px;
+    padding: 30px;
+  }
+}
+@media (max-width: 1318px) {
+  .search-container {
+    width: 100% !important;
+  }
+}/*# sourceMappingURL=media.css.map */
