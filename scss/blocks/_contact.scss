@@ -1,0 +1,50 @@
+@import '../_constants';
+@import '../_mixins';
+
+.contact {
+    background-color: $dark-blue;
+    color: $light-gray;
+
+    .section__inner {
+        width: 100%;
+        position: relative;
+        min-height: 664px;
+    }
+}
+
+.contact_image {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: calc(100% - 1600px)
+}
+
+.contact__content {
+    padding: 144px 48px;
+    position: absolute;
+    right: 48px;
+}
+
+.contact__content_title {
+    margin-bottom: 50px;
+    max-width: 513px;
+    &:after {
+        left: 0;
+        transform: none;
+    }
+}
+
+.contact__content_text {
+    margin-bottom: 46px;
+    max-width: 618px;
+}
+
+// media
+
+@media (max-width: 890px) {
+    .contact__content {
+        position: static;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
